@@ -1,13 +1,23 @@
 import { Table } from '~/components/data'
 
 const data = [
-	'LG',
-	'Samsung'
+	{
+		brand: 'LG'
+	},
+	{
+		brand: 'Samsung'
+	}
+]
+
+const columns = [
+	{
+		title: 'Brand'
+	}
 ]
 
 const Main = () => (
 	<div>
-		<Table data={data} />
+		<Table columns={columns} data={data} />
 	</div>
 )
 
