@@ -21,7 +21,12 @@ const Table =
 				{rows
 					?
 						rows.map(
-							() => <tr>11</tr>
+							(row) =>
+								<tr>
+									{columns.map(
+										({ index }) => <td>{row[index]}</td>
+									)}
+								</tr>
 						)
 					:
 						<mark>Table is Empty</mark>}

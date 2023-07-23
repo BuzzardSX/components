@@ -11,7 +11,8 @@ const data = [
 
 const columns = [
 	{
-		title: 'Brand'
+		title: 'Brand',
+		index: 'brand'
 	}
 ]
 
@@ -20,9 +21,9 @@ const Main = () => (
 		<div>
 			<Table columns={columns} data={data} />
 		</div>
-		<div>
+		{/* <div>
 			<Table data={data} />
-		</div>
+		</div> */}
 	</div>
 )
 
