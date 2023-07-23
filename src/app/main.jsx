@@ -2,10 +2,12 @@ import { Table } from '~/components/data'
 
 const data = [
 	{
-		brand: 'LG'
+		brand: 'LG',
+		model: 'F2J6HG7W'
 	},
 	{
-		brand: 'Samsung'
+		brand: 'Samsung',
+		model: 'WW5100A'
 	}
 ]
 
@@ -13,6 +15,10 @@ const columns = [
 	{
 		title: 'Brand',
 		index: 'brand'
+	},
+	{
+		title: 'Model',
+		index: 'model'
 	}
 ]
 
