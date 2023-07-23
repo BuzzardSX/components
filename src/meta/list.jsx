@@ -1,4 +1,4 @@
-const Map =
+const List =
 	({
 		children: renderItem,
 		items,
@@ -14,4 +14,4 @@ const Map =
 				: <Fallback />}
 		</HtmlTag>
 
-export default Map
+export default List

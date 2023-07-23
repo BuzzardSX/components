@@ -1,5 +1,5 @@
 import { Consumer } from './context'
-import { Map } from '~/root'
+import { List } from '~/meta'
 
 const Fallback = () => (
 	<Consumer>
@@ -14,11 +14,11 @@ const row = ({ key, title }) => <th key={key}>{title}</th>
 
 const Head = () =>
 	<Consumer>
-		{({ data, columns }) =>
+		{({ columns }) =>
 			<thead>
-				<Map items={columns} fallback={<Fallback />} htmlTag='tr'>
+				<List items={columns} fallback={<Fallback />} htmlTag='tr'>
 					{row}
-				</Map>
+				</List>
 			</thead>}
 	</Consumer>
 
