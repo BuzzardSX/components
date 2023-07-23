@@ -1,3 +1,6 @@
+import Head from './head'
+import { Provider } from './context'
+
 const Table =
 	({
 		columns,
@@ -5,33 +8,23 @@ const Table =
 		dataKey
 	}) =>
 		<table>
-			<thead>
-				<tr>
-					{columns
+			<Provider value={{ data: rows, columns }}>
+				<Head />
+				<tbody>
+					{rows
 						?
-							columns.map(
-								({ key, title }) => <th key={key}>{title}</th>
+							rows.map(
+								(row) =>
+									<tr key={row[dataKey]}>
+										{columns.map(
+											({ key, index }) => <td key={key}>{row[index]}</td>
+										)}
+									</tr>
 							)
 						:
-							Object.keys(rows[0]).map(
-								key => <th key={key}>{key}</th>
-							)}
-				</tr>
-			</thead>
-			<tbody>
-				{rows
-					?
-						rows.map(
-							(row) =>
-								<tr key={row[dataKey]}>
-									{columns.map(
-										({ key, index }) => <td key={key}>{row[index]}</td>
-									)}
-								</tr>
-						)
-					:
-						<mark>Table is Empty</mark>}
-			</tbody>
+							<mark>Table is Empty</mark>}
+				</tbody>
+			</Provider>
 		</table>
 
 export default Table
