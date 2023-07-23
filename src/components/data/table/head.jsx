@@ -3,7 +3,7 @@ import { Map } from '~/root'
 
 const Head = () => (
 	<Consumer>
-		{({ data, columns }) => (
+		{({ data, columns }) =>
 			<thead>
 				<Map
 					items={columns}
@@ -14,8 +14,7 @@ const Head = () => (
 					}>
 					{({ key, title }) => <th key={key}>{title}</th>}
 				</Map>
-			</thead>
-		)}
+			</thead>}
 	</Consumer>
 )
 
