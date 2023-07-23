@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 const config = defineConfig({
 	plugins: [react()],
@@ -14,4 +14,4 @@ const config = defineConfig({
 	}
 });
 
-export default config;
+export default config
