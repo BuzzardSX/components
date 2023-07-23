@@ -17,7 +17,12 @@ const columns = [
 
 const Main = () => (
 	<div>
-		<Table columns={columns} data={data} />
+		<div>
+			<Table columns={columns} data={data} />
+		</div>
+		<div>
+			<Table data={data} />
+		</div>
 	</div>
 )
 

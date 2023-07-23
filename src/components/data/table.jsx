@@ -6,9 +6,15 @@ const Table =
 		<table>
 			<thead>
 				<tr>
-					{columns.map(
-						({ title }) => <th>{title}</th>
-					)}
+					{columns
+						?
+							columns.map(
+								({ title }) => <th>{title}</th>
+							)
+						:
+							Object.keys(rows[0]).map(
+								key => <th>{key}</th>
+							)}
 				</tr>
 			</thead>
 			<tbody>
