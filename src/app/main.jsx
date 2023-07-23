@@ -13,11 +13,11 @@ const data = [
 
 const columns = [
 	{
-		title: 'Brand',
+		title: 'Бренд',
 		index: 'brand'
 	},
 	{
-		title: 'Model',
+		title: 'Модель',
 		index: 'model'
 	}
 ]
