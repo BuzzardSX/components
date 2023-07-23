@@ -9,11 +9,11 @@ const Table =
 					{columns
 						?
 							columns.map(
-								({ title }) => <th>{title}</th>
+								({ key, title }) => <th key={key}>{title}</th>
 							)
 						:
 							Object.keys(rows[0]).map(
-								key => <th>{key}</th>
+								key => <th key={key}>{key}</th>
 							)}
 				</tr>
 			</thead>
@@ -22,9 +22,9 @@ const Table =
 					?
 						rows.map(
 							(row) =>
-								<tr>
+								<tr key={row.key}>
 									{columns.map(
-										({ index }) => <td>{row[index]}</td>
+										({ key, index }) => <td key={key}>{row[index]}</td>
 									)}
 								</tr>
 						)

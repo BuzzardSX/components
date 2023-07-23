@@ -14,10 +14,12 @@ const data = [
 const columns = [
 	{
 		title: 'Бренд',
+		key: 'brand',
 		index: 'brand'
 	},
 	{
 		title: 'Модель',
+		key: 'model',
 		index: 'model'
 	}
 ]
