@@ -1,5 +1,10 @@
 {
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
-	"explorer.fileNesting.enabled": false
+	"explorer.fileNesting.enabled": false,
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/dist": true,
+		"**/package-lock.json": true
+	}
 }
