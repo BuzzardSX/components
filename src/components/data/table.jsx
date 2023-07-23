@@ -20,20 +20,11 @@ const Table =
 			<tbody>
 				{rows
 					?
-						(
-							<div>Not empty</div>
+						rows.map(
+							() => <tr>11</tr>
 						)
-						// rows.map(
-						// 	row => (
-						// 		<tr k>
-						// 			<td>{row}</td>
-						// 		</tr>
-						// 	)
-						// )
 					:
-						(
-							<mark>Table is Empty</mark>
-						)}
+						<mark>Table is Empty</mark>}
 			</tbody>
 		</table>
 
