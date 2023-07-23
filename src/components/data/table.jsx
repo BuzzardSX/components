@@ -1,7 +1,8 @@
 const Table =
 	({
 		columns,
-		data: rows
+		data: rows,
+		dataKey
 	}) =>
 		<table>
 			<thead>
@@ -22,7 +23,7 @@ const Table =
 					?
 						rows.map(
 							(row) =>
-								<tr key={row.key}>
+								<tr key={row[dataKey]}>
 									{columns.map(
 										({ key, index }) => <td key={key}>{row[index]}</td>
 									)}
