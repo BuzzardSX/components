@@ -1,7 +1,7 @@
 import { Consumer } from './context'
 import { Map } from '~/root'
 
-const Head = () => (
+const Head = () =>
 	<Consumer>
 		{({ data, columns }) =>
 			<thead>
@@ -16,6 +16,5 @@ const Head = () => (
 				</Map>
 			</thead>}
 	</Consumer>
-)
 
 export default Head
