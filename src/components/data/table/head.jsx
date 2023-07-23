@@ -3,12 +3,12 @@ import { Map } from '~/root'
 
 const Head = () => (
 	<Consumer>
-		{({ data: rows, columns }) => (
+		{({ data, columns }) => (
 			<thead>
 				<Map
 					items={columns}
 					fallback={
-						Object.keys(rows[0]).map(
+						Object.keys(data[0]).map(
 							key => <th key={key}>{key}</th>
 						)
 					}>
