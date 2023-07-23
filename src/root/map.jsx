@@ -2,15 +2,16 @@ const Map =
 	({
 		children: renderItem,
 		items,
-		fallback: Fallback
+		fallback: Fallback,
+		htmlTag: HtmlTag
 	}) =>
-		<tr>
+		<HtmlTag>
 			{items
 				?
 					items.map(
 						(item) => renderItem(item)
 					)
 				: <Fallback />}
-		</tr>
+		</HtmlTag>
 
 export default Map

@@ -16,7 +16,7 @@ const Head = () =>
 	<Consumer>
 		{({ data, columns }) =>
 			<thead>
-				<Map items={columns} fallback={<Fallback />}>
+				<Map items={columns} fallback={<Fallback />} htmlTag='tr'>
 					{row}
 				</Map>
 			</thead>}
