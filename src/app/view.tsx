@@ -1,0 +1,1 @@
+const View = () => <mark>View</mark>
