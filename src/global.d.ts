@@ -1,3 +1,3 @@
 interface Window {
-	app: HTMLElement
+	app: Element
 }
