@@ -1,6 +1,10 @@
+import Checkbox from './checkbox'
+
 const App = () =>
 	<div>
-		11
+		<div>
+			<Checkbox />
+		</div>
 	</div>
 
 export default App
