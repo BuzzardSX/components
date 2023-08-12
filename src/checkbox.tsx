@@ -3,6 +3,8 @@ interface Props {
 }
 
 const Checkbox = (props: Props) =>
-	<input type='checkbox' {...props} />
+	<div>
+		<input type='checkbox' {...props} />
+	</div>
 
 export default Checkbox
