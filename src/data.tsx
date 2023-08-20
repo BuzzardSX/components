@@ -1,25 +1,24 @@
 import type { ReactNode } from 'react'
 
-type Key = string
+type RecordKey = string
 
-interface Item<K extends Key> {
-	key: K
+type RecordValue = string
+
+interface DataSource<I, K extends RecordKey, V extends RecordValue> {
+	value: I[]
+	record: [key: (item: I) => K, value: (item: I) => V]
 }
 
-interface Data<K extends Key> {
-	value: Item<K>[]
-}
-
-interface Props<K extends Key> extends Data<K> {
+interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
 	children: (key: K) => ReactNode
 }
 
-type Component = <K extends Key>({ value, children }: Props<K>) => JSX.Element
+type Component = <I, K extends RecordKey, V extends RecordValue>({ value, children }: Props<I, K, V>) => JSX.Element
 
-const Data: Component = ({ value, children }) =>
+const Data: Component = ({ value, record: [key, itemValue], children }) =>
 	<>
 		{value.map(
-			(item) => children(item.key)
+			(item) => children(key(item))
 		)}
 	</>
 

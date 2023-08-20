@@ -19,14 +19,13 @@ type Component = <I, K extends RecordKey, V extends RecordValue>(props: Props<I,
 const Select: Component =
 	({
 		data,
-		record: [key, value],
+		record,
 		...props
 	}) =>
 		<select {...props}>
 			<Data
-				value={
-					data.map((item) => ({ key: key(item), value: value(item) }))
-				}>
+				value={data}
+				record={record}>
 				{(itemKey) => (
 					<option key={itemKey} value={itemKey}>{itemKey}</option>
 				)}
