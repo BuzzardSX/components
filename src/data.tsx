@@ -11,7 +11,9 @@ interface Props<K extends Key> {
 	children: (key: K) => ReactNode
 }
 
-const Data = <K extends Key>({ items, children }: Props<K>) =>
+type Component = <K extends Key>({ items, children }: Props<K>) => JSX.Element
+
+const Data: Component = ({ items, children }) =>
 	<Fragment>
 		{items.map(
 			(item) => children(item.key)
