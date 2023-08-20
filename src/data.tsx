@@ -4,12 +4,9 @@ type RecordKey = string
 
 type RecordValue = string
 
-interface DataSource<I, K extends RecordKey, V extends RecordValue> {
+interface Props<I, K extends RecordKey, V extends RecordValue> {
 	value: I[]
 	record: [key: (item: I) => K, value: (item: I) => V]
-}
-
-interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
 	children: (key: K) => ReactNode
 }
 
