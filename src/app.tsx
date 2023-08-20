@@ -25,8 +25,10 @@ const App = () =>
 		<div>
 			<Select
 				data={brands}
-				recordKey={(brand) => brand.id}
-				recordValue={(brand) => brand.name} />
+				record={[
+					(brand) => brand.id,
+					(brand) => brand.name
+				]} />
 		</div>
 	</div>
 

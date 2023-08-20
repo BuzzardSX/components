@@ -4,8 +4,7 @@ type RecordValue = string | number
 
 interface Data<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
-	recordKey: (item: I) => K
-	recordValue: (item: I) => V
+	record: [key: (item: I) => K, value: (item: I) => V]
 }
 
 interface Props<I, K extends RecordKey, V extends RecordValue> extends Data<I, K, V> {
@@ -18,18 +17,17 @@ type Component = <I, K extends RecordKey, V extends RecordValue>(props: Props<I,
 const Select: Component =
 	({
 		data,
-		recordKey,
-		recordValue,
+		record: [key, value],
 		...props
 	}) =>
 		<select {...props}>
 			{data.map(
 				(item) => {
-					const key = recordKey(item)
+					const optionKey = key(item)
 
 					return (
-						<option key={key} value={key}>
-							{recordValue(item)}
+						<option key={optionKey} value={optionKey}>
+							{value(item)}
 						</option>
 					)
 				}
