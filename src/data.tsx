@@ -10,20 +10,15 @@ interface Props<I, K extends RecordKey, V extends RecordValue> {
 		key: (item: I) => K
 	]
 	value: (item: I) => V
-	children: (value: V) => ReactNode
+	children: (key: K, value: V) => ReactNode
 }
 
 type Component = <I, K extends RecordKey, V extends RecordValue>({ data, children }: Props<I, K, V>) => JSX.Element
 
-const TAG_NAME = 'option'
 
 const Component: Component = ({ data, record: [key], value, children }) =>
 	<>
-		{data.map(
-			(item) =>
-				<TAG_NAME key={key(item)} value={key(item)}>
-					{children(value(item))}
-				</TAG_NAME>)}
+		{data.map((item) => children(key(item), value(item)))}
 	</>
 
 export type DataSource<I, K extends RecordKey, V extends RecordValue> = Exclude<Props<I, K, V>, 'children'>
