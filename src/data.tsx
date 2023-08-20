@@ -17,8 +17,6 @@ type Component = <I, K extends RecordKey, V extends RecordValue>({ data, childre
 
 const TAG_NAME = 'option'
 
-const TAG_VALUE_ATTRIBUTE = 'value'
-
 const Component: Component = ({ data, record: [key], value, children }) =>
 	<>
 		{data.map(
