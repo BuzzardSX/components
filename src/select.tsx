@@ -1,17 +1,19 @@
+type RecordKey = string
+
 type RecordValue = string
 
-interface Data<I, K extends RecordValue, V extends RecordValue> {
+interface Data<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
 	recordKey: (item: I) => K
 	recordValue: (item: I) => V
 }
 
-interface Props<I, K extends RecordValue, V extends RecordValue> extends Data<I, K, V> {
+interface Props<I, K extends RecordKey, V extends RecordValue> extends Data<I, K, V> {
 	disabled?: boolean
 	required?: boolean
 }
 
-type Component = <I, K extends RecordValue, V extends RecordValue>(props: Props<I, K, V>) => JSX.Element
+type Component = <I, K extends RecordKey, V extends RecordValue>(props: Props<I, K, V>) => JSX.Element
 
 const Select: Component =
 	({
