@@ -10,7 +10,7 @@ interface Props<I, K extends RecordKey, V extends RecordValue> {
 		key: (item: I) => K,
 		value: (item: I) => V
 	]
-	children: (key: K) => ReactNode
+	children: (key: K, value: V) => ReactNode
 }
 
 type Component = <I, K extends RecordKey, V extends RecordValue>({ value, children }: Props<I, K, V>) => JSX.Element
@@ -18,7 +18,7 @@ type Component = <I, K extends RecordKey, V extends RecordValue>({ value, childr
 const Data: Component = ({ value, record: [key, itemValue], children }) =>
 	<>
 		{value.map(
-			(item) => children(key(item))
+			(item) => children(key(item), itemValue(item))
 		)}
 	</>
 

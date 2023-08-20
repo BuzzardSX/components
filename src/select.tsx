@@ -24,7 +24,7 @@ const Select: Component =
 	}) =>
 		<select {...props}>
 			<Data {...{ value: data, record }}>
-				{(key) => <option key={key} value={key}>{key}</option>}
+				{(key, value) => <option key={key} value={key}>{value}</option>}
 			</Data>
 		</select>
 
