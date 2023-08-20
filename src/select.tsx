@@ -1,8 +1,7 @@
 import Data from './data'
-import type { Data as DataSource } from './data'
 import { Record } from './data'
 
-interface Props<I, K extends Record.Key, V extends Record.Value> extends DataSource<I, K, V> {
+interface Props<I, K extends Record.Key, V extends Record.Value> extends Record.Data<I, K, V> {
 	disabled?: boolean
 	required?: boolean
 }

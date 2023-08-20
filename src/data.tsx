@@ -16,6 +16,12 @@ export namespace Record {
 	}
 
 	export type Component = <I, K extends Record.Key, V extends Record.Value>({ data, children }: Record.Props<I, K, V> & Record.Render<K, V>) => JSX.Element
+
+	export interface Data<I, K extends Record.Key, V extends Record.Value> {
+		data: I[]
+		recordKey: (item: I) => K
+		recordValue: (item: I) => V
+	}
 }
 
 const Component: Record.Component = ({ data, $key, value, children: render }) =>
@@ -23,11 +29,4 @@ const Component: Record.Component = ({ data, $key, value, children: render }) =>
 		{data.map((item) => render($key(item), value(item)))}
 	</>
 
-interface Data<I, K extends Record.Key, V extends Record.Value> {
-	data: I[]
-	recordKey: (item: I) => K
-	recordValue: (item: I) => V
-}
-
-export type { Data }
 export default Component
