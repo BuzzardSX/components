@@ -25,8 +25,8 @@ const App = () =>
 		<div>
 			<Select
 				data={brands}
-				recordKey='id'
-				recordValue='name' />
+				recordKey={(item) => item.id}
+				recordValue={(item) => item.name} />
 		</div>
 	</div>
 

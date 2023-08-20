@@ -1,28 +1,24 @@
-type ItemValue = string | number
+type RecordValue = string
 
-type Item = {
-	[key: string]: ItemValue
-}
-
-interface Data<I extends Item> {
+interface Data<I, K extends RecordValue, V extends RecordValue> {
 	data: I[]
-	recordKey: keyof I
-	recordValue: keyof I
+	recordKey: (item: I) => K
+	recordValue: (item: I) => V
 }
 
-interface Props<I extends Item> extends Data<I> {
+interface Props<I, K extends RecordValue, V extends RecordValue> extends Data<I, K, V> {
 	disabled?: boolean
 	required?: boolean
 }
 
-type Component = <I extends Item>(props: Props<I>) => JSX.Element
+type Component = <I, K extends RecordValue, V extends RecordValue>(props: Props<I, K, V>) => JSX.Element
 
 const Select: Component = ({ data, recordKey, recordValue, ...props }) =>
 	<select {...props}>
 		{data.map(
-			({ [recordKey]: key, [recordValue]: value }) =>
-				<option key={key} value={key}>
-					{value}
+			(item) =>
+				<option key={recordKey(item)} value={recordKey(item)}>
+					{recordValue(item)}
 				</option>
 		)}
 	</select>
