@@ -7,9 +7,9 @@ export type RecordValue = string
 interface Props<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
 	record: [
-		key: (item: I) => K,
-		value: (item: I) => V
+		key: (item: I) => K
 	]
+	value: (item: I) => V
 	children: (value: V) => ReactNode
 }
 
@@ -19,12 +19,12 @@ const TAG_NAME = 'option'
 
 const TAG_VALUE_ATTRIBUTE = 'value'
 
-const Component: Component = ({ data, record: [key, itemValue], children }) =>
+const Component: Component = ({ data, record: [key], value, children }) =>
 	<>
 		{data.map(
 			(item) =>
 				<TAG_NAME key={key(item)} value={key(item)}>
-					{children(itemValue(item))}
+					{children(value(item))}
 				</TAG_NAME>)}
 	</>
 
