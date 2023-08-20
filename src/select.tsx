@@ -11,12 +11,14 @@ interface Data<R extends Record> {
 }
 
 interface Props<R extends Record> extends Data<R> {
+	disabled?: boolean
+	required?: boolean
 }
 
 type Component = <R extends Record>(props: Props<R>) => JSX.Element
 
-const Select: Component = ({ data, recordKey, recordValue }) =>
-	<select>
+const Select: Component = ({ data, recordKey, recordValue, ...props }) =>
+	<select {...props}>
 		{data.map(
 			({ [recordKey]: key, [recordValue]: value }) =>
 				<option key={key} value={key}>
