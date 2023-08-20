@@ -17,7 +17,9 @@ function Component<T extends GenericItem>({ records, recordKey }: Props<T>) {
 		<select>
 			{records.map(
 				({ [recordKey]: key }) =>
-					<option value={key}>{key}</option>
+					<option key={key} value={key}>
+						{key}
+					</option>
 			)}
 		</select>
 	)
