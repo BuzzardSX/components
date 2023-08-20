@@ -1,13 +1,5 @@
 import Data from './data'
-
-type RecordKey = string
-
-type RecordValue = string
-
-interface DataSource<I, K extends RecordKey, V extends RecordValue> {
-	data: I[]
-	record: [key: (item: I) => K, value: (item: I) => V]
-}
+import type { DataSource, RecordKey, RecordValue } from './data'
 
 interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
 	disabled?: boolean
@@ -23,7 +15,7 @@ const Select: Component =
 		...props
 	}) =>
 		<select {...props}>
-			<Data {...{ value: data, record }}>
+			<Data {...{ data, record }}>
 				{(key, value) => value}
 			</Data>
 		</select>
