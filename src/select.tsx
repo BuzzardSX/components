@@ -13,7 +13,9 @@ interface Data<R extends Record> {
 interface Props<R extends Record> extends Data<R> {
 }
 
-const Select = <R extends Record>({ data, recordKey, recordValue }: Props<R>) => {
+type Component = <R extends Record>(props: Props<R>) => JSX.Element
+
+const Select: Component = ({ data, recordKey, recordValue }) => {
 	return (
 		<select>
 			{data.map(
