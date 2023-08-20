@@ -4,9 +4,9 @@ import type { RecordKey, RecordValue } from './data'
 interface DataSource<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
 	record: [
-		key: (item: I) => K,
-		value: (item: I) => V
+		key: (item: I) => K
 	]
+	recordValue: (item: I) => V
 }
 
 interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
@@ -19,11 +19,12 @@ type Component = <I, K extends RecordKey, V extends RecordValue>(props: Props<I,
 const Select: Component =
 	({
 		data,
-		record: [$key, value],
+		record: [$key],
+		recordValue,
 		...props
 	}) =>
 		<select {...props}>
-			<Data {...{ data, $key, value }}>
+			<Data {...{ data, $key, value: recordValue }}>
 				{(key, value) =>
 					<option key={key} value={key}>
 						{value}
