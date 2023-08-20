@@ -13,7 +13,7 @@ interface Data<R extends Record> {
 interface Props<R extends Record> extends Data<R> {
 }
 
-function Component<R extends Record>({ data, recordKey, recordValue }: Props<R>) {
+function Select<R extends Record>({ data, recordKey, recordValue }: Props<R>) {
 	return (
 		<select>
 			{data.map(
@@ -26,4 +26,4 @@ function Component<R extends Record>({ data, recordKey, recordValue }: Props<R>)
 	)
 }
 
-export default Component
+export default Select
