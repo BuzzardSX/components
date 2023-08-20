@@ -14,7 +14,12 @@ interface Props<I, K extends RecordValue, V extends RecordValue> extends Data<I,
 type Component = <I, K extends RecordValue, V extends RecordValue>(props: Props<I, K, V>) => JSX.Element
 
 const Select: Component =
-	({ data, recordKey, recordValue, ...props }) =>
+	({
+		data,
+		recordKey,
+		recordValue,
+		...props
+	}) =>
 		<select {...props}>
 			{data.map(
 				(item) =>
