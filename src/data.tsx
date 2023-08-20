@@ -13,12 +13,10 @@ interface Props<K extends Key> {
 
 type Component = <K extends Key>({ items, children }: Props<K>) => JSX.Element
 
-const TAG_NAME = 'option'
-
 const Data: Component = ({ items, children }) =>
 	<>
 		{items.map(
-			(item) => <TAG_NAME key={item.key} />
+			(item) => children(item.key)
 		)}
 	</>
 

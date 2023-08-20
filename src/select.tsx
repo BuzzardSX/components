@@ -23,17 +23,6 @@ const Select: Component =
 		...props
 	}) =>
 		<select {...props}>
-			{data.map(
-				(item) => {
-					const optionKey = key(item)
-
-					return (
-						<option key={optionKey} value={optionKey}>
-							{value(item)}
-						</option>
-					)
-				}
-			)}
 			<Data
 				items={
 					data.map((item) => ({ key: key(item), value: value(item) }))
