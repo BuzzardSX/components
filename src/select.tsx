@@ -1,5 +1,4 @@
-import Data from './data'
-import { Record } from './data'
+import { default as Data, Record } from './data'
 
 interface Props<I, K extends Record.Key, V extends Record.Value> extends Record.Data<I, K, V> {
 	disabled?: boolean
