@@ -24,9 +24,10 @@ const Select: Component =
 	}) =>
 		<select {...props}>
 			<Data {...{ data, $key, value }}>
-				{(key, value) => (
-					<option key={key} value={key}>{value}</option>
-				)}
+				{(key, value) =>
+					<option key={key} value={key}>
+						{value}
+					</option>}
 			</Data>
 		</select>
 
