@@ -1,12 +1,13 @@
 import Data from './data'
-import type { RecordKey, RecordValue, Data as DataSource } from './data'
+import type { Data as DataSource } from './data'
+import { Record } from './data'
 
-interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
+interface Props<I, K extends Record.Key, V extends Record.Value> extends DataSource<I, K, V> {
 	disabled?: boolean
 	required?: boolean
 }
 
-type Component = <I, K extends RecordKey, V extends RecordValue>(props: Props<I, K, V>) => JSX.Element
+type Component = <I, K extends Record.Key, V extends Record.Value>(props: Props<I, K, V>) => JSX.Element
 
 const Select: Component =
 	({
