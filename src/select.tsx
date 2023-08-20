@@ -13,7 +13,7 @@ interface Data<R extends Record> {
 interface Props<R extends Record> extends Data<R> {
 }
 
-function Select<R extends Record>({ data, recordKey, recordValue }: Props<R>) {
+const Select = <R extends Record>({ data, recordKey, recordValue }: Props<R>) => {
 	return (
 		<select>
 			{data.map(
