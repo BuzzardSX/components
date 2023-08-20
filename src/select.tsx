@@ -1,3 +1,5 @@
+import Data from './data'
+
 type RecordKey = string
 
 type RecordValue = string | number
