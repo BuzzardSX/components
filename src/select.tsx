@@ -1,19 +1,19 @@
 type RecordValue = string | number
 
-type GenericItem = {
+type Record = {
 	[key: string]: RecordValue
 }
 
-interface Data<T extends GenericItem> {
-	data: T[]
-	recordKey: keyof T
-	recordValue: keyof T
+interface Data<R extends Record> {
+	data: R[]
+	recordKey: keyof R
+	recordValue: keyof R
 }
 
-interface Props<T extends GenericItem> extends Data<T> {
+interface Props<R extends Record> extends Data<R> {
 }
 
-function Component<T extends GenericItem>({ data, recordKey, recordValue }: Props<T>) {
+function Component<R extends Record>({ data, recordKey, recordValue }: Props<R>) {
 	return (
 		<select>
 			{data.map(
