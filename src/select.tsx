@@ -24,7 +24,7 @@ const Select: Component =
 	}) =>
 		<select {...props}>
 			<Data
-				items={
+				value={
 					data.map((item) => ({ key: key(item), value: value(item) }))
 				}>
 				{(itemKey) => (

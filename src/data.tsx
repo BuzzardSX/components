@@ -7,15 +7,15 @@ interface Item<K extends Key> {
 }
 
 interface Props<K extends Key> {
-	items: Item<K>[]
+	value: Item<K>[]
 	children: (key: K) => ReactNode
 }
 
-type Component = <K extends Key>({ items, children }: Props<K>) => JSX.Element
+type Component = <K extends Key>({ value, children }: Props<K>) => JSX.Element
 
-const Data: Component = ({ items, children }) =>
+const Data: Component = ({ value, children }) =>
 	<>
-		{items.map(
+		{value.map(
 			(item) => children(item.key)
 		)}
 	</>
