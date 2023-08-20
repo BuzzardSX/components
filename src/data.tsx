@@ -8,13 +8,13 @@ interface Item<K extends Key> {
 
 interface Props<K extends Key> {
 	items: Item<K>[]
-	itemRender: (key: K) => ReactNode
+	children: (key: K) => ReactNode
 }
 
-const Data = <K extends Key>({ items, itemRender }: Props<K>) =>
+const Data = <K extends Key>({ items, children }: Props<K>) =>
 	<Fragment>
 		{items.map(
-			(item) => itemRender(item.key)
+			(item) => children(item.key)
 		)}
 	</Fragment>
 

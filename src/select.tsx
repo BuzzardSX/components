@@ -34,6 +34,14 @@ const Select: Component =
 					)
 				}
 			)}
+			<Data
+				items={
+					data.map((item) => ({ key: key(item), value: value(item) }))
+				}>
+				{(itemKey) => (
+					<option key={itemKey} value={itemKey}>{itemKey}</option>
+				)}
+			</Data>
 		</select>
 
 export default Select
