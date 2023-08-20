@@ -11,11 +11,11 @@ export namespace Record {
 		value: (item: I) => V
 	}
 
-	interface Render<K extends Key, V extends Value> {
+	interface Children<K extends Key, V extends Value> {
 		children: (key: K, value: V) => ReactNode
 	}
 
-	export type Component = <I, K extends Key, V extends Value>({ data, children }: Props<I, K, V> & Render<K, V>) => JSX.Element
+	export type Component = <I, K extends Key, V extends Value>({ data, children }: Props<I, K, V> & Children<K, V>) => JSX.Element
 
 	export interface Data<I, K extends Key, V extends Value> {
 		data: I[]
