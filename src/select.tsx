@@ -5,20 +5,21 @@ type GenericItem = {
 }
 
 interface Data<T extends GenericItem> {
-	records: T[]
+	data: T[]
 	recordKey: keyof T
+	recordValue: keyof T
 }
 
 interface Props<T extends GenericItem> extends Data<T> {
 }
 
-function Component<T extends GenericItem>({ records, recordKey }: Props<T>) {
+function Component<T extends GenericItem>({ data, recordKey, recordValue }: Props<T>) {
 	return (
 		<select>
-			{records.map(
-				({ [recordKey]: key }) =>
+			{data.map(
+				({ [recordKey]: key, [recordValue]: value }) =>
 					<option key={key} value={key}>
-						{key}
+						{value}
 					</option>
 			)}
 		</select>

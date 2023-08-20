@@ -4,13 +4,13 @@ const App = () =>
 	<div>
 		<div>
 			<Select
-				records={[
+				data={[
 					{ id: 'LG' },
 					{ id: 'Philips' },
 					{ id: 'Samsung' },
 					{ id: 'Sony' }
 				]}
-				recordKey='id' />
+				recordKey='id' recordValue='id' />
 		</div>
 	</div>
 
