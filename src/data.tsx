@@ -19,7 +19,7 @@ const TAG_NAME = 'option'
 
 const TAG_VALUE_ATTRIBUTE = 'value'
 
-const Data: Component = ({ value, record: [key, itemValue], children }) =>
+const Component: Component = ({ value, record: [key, itemValue], children }) =>
 	<>
 		{value.map(
 			(item) =>
@@ -28,4 +28,5 @@ const Data: Component = ({ value, record: [key, itemValue], children }) =>
 				</TAG_NAME>)}
 	</>
 
-export default Data
+export type {}
+export default Component
