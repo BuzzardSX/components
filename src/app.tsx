@@ -10,7 +10,7 @@ const App = () =>
 					{ id: 'Samsung' },
 					{ id: 'Sony' }
 				]}
-				dataKey='id' />
+				recordKey='id' />
 		</div>
 	</div>
 
