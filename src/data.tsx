@@ -17,9 +17,9 @@ interface Render<K extends RecordKey, V extends RecordValue> {
 type Component = <I, K extends RecordKey, V extends RecordValue>({ data, children }: Props<I, K, V> & Render<K, V>) => JSX.Element
 
 
-const Component: Component = ({ data, $key, value, children }) =>
+const Component: Component = ({ data, $key, value, children: render }) =>
 	<>
-		{data.map((item) => children($key(item), value(item)))}
+		{data.map((item) => render($key(item), value(item)))}
 	</>
 
 export type DataSource<I, K extends RecordKey, V extends RecordValue> = Props<I, K, V>
