@@ -5,7 +5,7 @@ interface Props {
 const Select = (props: Props) =>
 	<select>
 		{props.data.map(
-			option => <option value={option} />
+			option => <option value={option}>{option}</option>
 		)}
 	</select>
 
