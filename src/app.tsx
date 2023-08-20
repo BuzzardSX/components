@@ -3,7 +3,14 @@ import Select from './select'
 const App = () =>
 	<div>
 		<div>
-			<Select data={['LG']} />
+			<Select
+				records={[
+					{ id: 'LG' },
+					{ id: 'Philips' },
+					{ id: 'Samsung' },
+					{ id: 'Sony' }
+				]}
+				dataKey='id' />
 		</div>
 	</div>
 
