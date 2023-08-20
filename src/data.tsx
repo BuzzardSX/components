@@ -13,11 +13,13 @@ interface Props<K extends Key> {
 
 type Component = <K extends Key>({ items, children }: Props<K>) => JSX.Element
 
+const TAG_NAME = 'option'
+
 const Data: Component = ({ items, children }) =>
-	<Fragment>
+	<>
 		{items.map(
-			(item) => children(item.key)
+			(item) => <TAG_NAME key={item.key} />
 		)}
-	</Fragment>
+	</>
 
 export default Data
