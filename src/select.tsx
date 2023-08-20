@@ -1,6 +1,9 @@
-interface Props {
-	disabled?: boolean
+interface Data {
 	data: string[]
+}
+
+interface Props extends Data {
+	disabled?: boolean
 }
 
 const Select = ({ data, ...props }: Props) =>
