@@ -2,7 +2,7 @@ import Data from './data'
 
 type RecordKey = string
 
-type RecordValue = string | number
+type RecordValue = string
 
 interface DataSource<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
