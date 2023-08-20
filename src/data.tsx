@@ -8,7 +8,8 @@ interface Props<I, K extends RecordKey, V extends RecordValue> {
 	value: I[]
 	record: [
 		key: (item: I) => K,
-		value: (item: I) => V]
+		value: (item: I) => V
+	]
 	children: (key: K) => ReactNode
 }
 
