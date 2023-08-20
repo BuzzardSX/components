@@ -1,6 +1,6 @@
 type RecordKey = string
 
-type RecordValue = string
+type RecordValue = string | number
 
 interface Data<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
