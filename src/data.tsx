@@ -5,19 +5,19 @@ export namespace Record {
 
 	export type Value = string
 
-	export interface Props<I, K extends Record.Key, V extends Record.Value> {
+	export interface Props<I, K extends Key, V extends Value> {
 		data: I[]
 		$key: (item: I) => K
 		value: (item: I) => V
 	}
 
-	export interface Render<K extends Record.Key, V extends Record.Value> {
+	export interface Render<K extends Key, V extends Value> {
 		children: (key: K, value: V) => ReactNode
 	}
 
-	export type Component = <I, K extends Record.Key, V extends Record.Value>({ data, children }: Record.Props<I, K, V> & Record.Render<K, V>) => JSX.Element
+	export type Component = <I, K extends Key, V extends Value>({ data, children }: Props<I, K, V> & Render<K, V>) => JSX.Element
 
-	export interface Data<I, K extends Record.Key, V extends Record.Value> {
+	export interface Data<I, K extends Key, V extends Value> {
 		data: I[]
 		recordKey: (item: I) => K
 		recordValue: (item: I) => V
