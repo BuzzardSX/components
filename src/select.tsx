@@ -4,12 +4,12 @@ type RecordKey = string
 
 type RecordValue = string | number
 
-interface Data<I, K extends RecordKey, V extends RecordValue> {
+interface DataSource<I, K extends RecordKey, V extends RecordValue> {
 	data: I[]
 	record: [key: (item: I) => K, value: (item: I) => V]
 }
 
-interface Props<I, K extends RecordKey, V extends RecordValue> extends Data<I, K, V> {
+interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
 	disabled?: boolean
 	required?: boolean
 }

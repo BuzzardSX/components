@@ -6,8 +6,11 @@ interface Item<K extends Key> {
 	key: K
 }
 
-interface Props<K extends Key> {
+interface Data<K extends Key> {
 	value: Item<K>[]
+}
+
+interface Props<K extends Key> extends Data<K> {
 	children: (key: K) => ReactNode
 }
 
