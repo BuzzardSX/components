@@ -23,12 +23,8 @@ const Select: Component =
 		...props
 	}) =>
 		<select {...props}>
-			<Data
-				value={data}
-				record={record}>
-				{(itemKey) => (
-					<option key={itemKey} value={itemKey}>{itemKey}</option>
-				)}
+			<Data {...{ value: data, record }}>
+				{(key) => <option key={key} value={key}>{key}</option>}
 			</Data>
 		</select>
 
