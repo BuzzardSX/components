@@ -18,7 +18,7 @@ interface Props<I extends Item> extends Data<I> {
 type Component = <I extends Item>(props: Props<I>) => JSX.Element
 
 const Select: Component = ({ data, recordKey, recordValue, ...props }) =>
-	<select {...props}>
+	<select onChange={(e) => console.log(e.target.value)} {...props}>
 		{data.map(
 			({ [recordKey]: key, [recordValue]: value }) =>
 				<option key={key} value={key}>
