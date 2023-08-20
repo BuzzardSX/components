@@ -24,10 +24,15 @@ const Select: Component =
 	}) =>
 		<select {...props}>
 			{data.map(
-				(item) =>
-					<option key={recordKey(item)} value={recordKey(item)}>
-						{recordValue(item)}
-					</option>
+				(item) => {
+					const key = recordKey(item)
+
+					return (
+						<option key={key} value={key}>
+							{recordValue(item)}
+						</option>
+					)
+				}
 			)}
 		</select>
 
