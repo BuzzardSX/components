@@ -3,4 +3,10 @@ interface Props {
 }
 
 const Select = (props: Props) =>
-	<select />
+	<select>
+		{props.data.map(
+			option => <option value={option} />
+		)}
+	</select>
+
+export default Select

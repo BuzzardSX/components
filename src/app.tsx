@@ -1,9 +1,9 @@
-import Checkbox from './checkbox'
+import Select from './select'
 
 const App = () =>
 	<div>
 		<div>
-			<Checkbox />
+			<Select data={['LG']} />
 		</div>
 	</div>
 
