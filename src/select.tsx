@@ -1,7 +1,7 @@
-type RecordValue = string | number
+type ItemValue = string | number
 
 type Item = {
-	[key: string]: RecordValue
+	[key: string]: ItemValue
 }
 
 interface Data<I extends Item> {
