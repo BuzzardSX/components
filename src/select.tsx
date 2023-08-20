@@ -15,17 +15,14 @@ interface Props<R extends Record> extends Data<R> {
 
 type Component = <R extends Record>(props: Props<R>) => JSX.Element
 
-const Select: Component = ({ data, recordKey, recordValue }) => {
-	return (
-		<select>
-			{data.map(
-				({ [recordKey]: key, [recordValue]: value }) =>
-					<option key={key} value={key}>
-						{value}
-					</option>
-			)}
-		</select>
-	)
-}
+const Select: Component = ({ data, recordKey, recordValue }) =>
+	<select>
+		{data.map(
+			({ [recordKey]: key, [recordValue]: value }) =>
+				<option key={key} value={key}>
+					{value}
+				</option>
+		)}
+	</select>
 
 export default Select
