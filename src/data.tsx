@@ -5,13 +5,13 @@ export namespace Record {
 
 	export type Value = string
 
-	export interface Props<I, K extends Key, V extends Value> {
+	interface Props<I, K extends Key, V extends Value> {
 		data: I[]
 		$key: (item: I) => K
 		value: (item: I) => V
 	}
 
-	export interface Render<K extends Key, V extends Value> {
+	interface Render<K extends Key, V extends Value> {
 		children: (key: K, value: V) => ReactNode
 	}
 
