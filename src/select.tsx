@@ -1,11 +1,5 @@
 import Data from './data'
-import type { RecordKey, RecordValue } from './data'
-
-interface DataSource<I, K extends RecordKey, V extends RecordValue> {
-	data: I[]
-	recordKey: (item: I) => K
-	recordValue: (item: I) => V
-}
+import type { RecordKey, RecordValue, Data as DataSource } from './data'
 
 interface Props<I, K extends RecordKey, V extends RecordValue> extends DataSource<I, K, V> {
 	disabled?: boolean

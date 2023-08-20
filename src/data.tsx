@@ -22,6 +22,11 @@ const Component: Component = ({ data, $key, value, children: render }) =>
 		{data.map((item) => render($key(item), value(item)))}
 	</>
 
-export type DataSource<I, K extends RecordKey, V extends RecordValue> = Props<I, K, V>
+interface Data<I, K extends RecordKey, V extends RecordValue> {
+	data: I[]
+	recordKey: (item: I) => K
+	recordValue: (item: I) => V
+}
 
+export type { Data }
 export default Component
