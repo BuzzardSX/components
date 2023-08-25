@@ -1,5 +1,5 @@
-const App = () =>
-	<div>
-	</div>
+import Page from './page'
+
+const App = () => <Page />
 
 export default App
