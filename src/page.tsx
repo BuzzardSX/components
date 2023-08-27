@@ -5,20 +5,18 @@ type Key = string | number
 type Value = Key
 
 interface SelectProps<K extends Key> {
-	options: ToArray<K>
+	dataKeys: ToArray<K>
 	onChange?: (key: K) => void
 }
 
-const Select = <T extends Key>({ options, onChange }: SelectProps<T>) => {
+const Select = <T extends Key>({ dataKeys, onChange }: SelectProps<T>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => onChange?.(event.target.value as T)
 
 	return (
 		<select onChange={changeHandler}>
-			{options.map((option) =>
-				<option key={option} value={option}>
-					{option}
-				</option>
+			{dataKeys.map((key) =>
+				<option value={key} {...{ key }}>{key}</option>
 			)}
 		</select>
 	)
@@ -30,7 +28,7 @@ const nums = [1, 2, 3]
 
 const Page = () => (
 	<div>
-		<Select options={nums} onChange={(key) => console.log(key)} />
+		<Select dataKeys={nums} onChange={(key) => console.log(key)} />
 	</div>
 )
 
