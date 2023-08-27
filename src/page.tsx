@@ -1,11 +1,11 @@
 type Key = string | number
 
+type Value = Key
+
 interface SelectProps<K extends Key> {
 	options: ToArray<K>
 	onChange?: (key: K) => void
 }
-
-const arr = [[1, 2], ['a', 'b']]
 
 const Select = <T extends Key>({ options, onChange }: SelectProps<T>) => {
 	return (
@@ -17,9 +17,13 @@ const Select = <T extends Key>({ options, onChange }: SelectProps<T>) => {
 	)
 }
 
+const chars = ['a', 'b', 'c']
+
+const nums = [1, 2, 3]
+
 const Page = () => (
 	<div>
-		<Select options={[1, 2, 3]} onChange={(key) => console.log()} />
+		<Select options={nums} onChange={(key) => console.log(key)} />
 	</div>
 )
 
