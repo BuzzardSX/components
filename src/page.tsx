@@ -1,22 +1,22 @@
 import type { ChangeEventHandler } from 'react'
 
-type Key = string | number
+type Value = string | number
 
-type Value = Key
+type Label = Value
 
-interface SelectProps<K extends Key> {
-	dataKeys: ToArray<K>
-	onChange?: (key: K) => void
+interface SelectProps<V extends Value> {
+	optionValues: ToArray<V>
+	onChange?: (value: V) => void
 }
 
-const Select = <T extends Key>({ dataKeys, onChange }: SelectProps<T>) => {
+const Select = <V extends Value>({ optionValues, onChange }: SelectProps<V>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
-		(event) => onChange?.(event.target.value as T)
+		(event) => onChange?.(event.target.value as V)
 
 	return (
 		<select onChange={changeHandler}>
-			{dataKeys.map((key) =>
-				<option value={key} {...{ key }}>{key}</option>
+			{optionValues.map((value) =>
+				<option key={value} children={value} />
 			)}
 		</select>
 	)
@@ -26,10 +26,11 @@ const chars = ['a', 'b', 'c']
 
 const nums = [1, 2, 3]
 
-const Page = () => (
+const brands = ['LG', 'Samsung', 'Philips']
+
+const Page = () =>
 	<div>
-		<Select dataKeys={nums} onChange={(key) => console.log(key)} />
+		<Select optionValues={nums} onChange={(value) => console.log(value)} />
 	</div>
-)
 
 export default Page
