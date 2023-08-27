@@ -1,6 +1,6 @@
-export type Key = string | number
+type Key = string | number
 
-export type ChangeEventHandler<K extends Key> = (key: K) => void
+type ChangeEventHandler<K extends Key> = (key: K) => void
 
 type ItemKey = number
 
@@ -18,7 +18,9 @@ render({
 	items: [{ key: 1 }, { key: 2 }]
 })
 
-export interface Props<K extends Key> {
+interface Props<K extends Key> {
 	itemKeys: ToArray<K>
 	onChange?: ChangeEventHandler<K>
 }
+
+export type { Props, ChangeEventHandler, Key }
