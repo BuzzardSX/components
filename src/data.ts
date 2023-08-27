@@ -4,6 +4,12 @@ export type ChangeEventHandler<K> = (key: K) => void
 
 type ItemKey = number
 
+type NonLiteralNumber<T> = T extends number ? number extends T ? T : never : never
+
+type Literal = 1
+
+type Result = NonLiteralNumber<number>
+
 type Item<K extends ItemKey> = {
 	key: K
 }
