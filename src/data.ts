@@ -1,4 +1,4 @@
-namespace Data {
+export namespace Data {
 	export type Key = string | number
 
 	type ChangeEventHandler<K> = (key: K) => void

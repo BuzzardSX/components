@@ -1,19 +1,13 @@
 import type { ChangeEventHandler } from 'react'
+import { Data } from './data'
 
-type Key = string | number
-
-interface Data<K extends Key> {
-	dataKeys: ToArray<K>
-	onChange?: (key: K) => void
-}
-
-interface Props<K extends Key> extends Data<K> {
+interface Props<K extends Data.Key> extends Data.Props<K> {
 	disabled?: boolean
 	multiple?: boolean
 	name?: string
 }
 
-const Select = <K extends Key>({ dataKeys, onChange, ...props }: Props<K>) => {
+const Select = <K extends Data.Key>({ dataKeys, onChange, ...props }: Props<K>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => onChange?.(event.target.value as K)
 
