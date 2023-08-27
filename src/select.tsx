@@ -10,6 +10,7 @@ interface Data<K extends Key> {
 interface Props<K extends Key> extends Data<K> {
 	disabled?: boolean
 	multiple?: boolean
+	name?: string
 }
 
 const Select = <K extends Key>({ dataKeys, onChange, ...props }: Props<K>) => {
