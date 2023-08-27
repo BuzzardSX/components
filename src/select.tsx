@@ -1,22 +1,20 @@
 import type { ChangeEventHandler } from 'react'
 
-type Value = string | number
+type Key = string | number
 
-type Label = Value
-
-interface SelectProps<V extends Value> {
-	optionValues: ToArray<V>
-	onChange?: (value: V) => void
+interface Props<K extends Key> {
+	optionValues: ToArray<K>
+	onChange?: (key: K) => void
 }
 
-const Select = <V extends Value>({ optionValues, onChange }: SelectProps<V>) => {
+const Select = <K extends Key>({ optionValues, onChange }: Props<K>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
-		(event) => onChange?.(event.target.value as V)
+		(event) => onChange?.(event.target.value as K)
 
 	return (
 		<select onChange={changeHandler}>
-			{optionValues.map((value) =>
-				<option key={value} children={value} />
+			{optionValues.map((key) =>
+				<option key={key} children={key} />
 			)}
 		</select>
 	)
