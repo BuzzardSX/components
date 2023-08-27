@@ -2,9 +2,13 @@ import type { ChangeEventHandler } from 'react'
 
 type Key = string | number
 
-interface Props<K extends Key> {
+interface Data<K extends Key> {
 	dataKeys: ToArray<K>
 	onChange?: (key: K) => void
+}
+
+interface Props<K extends Key> extends Data<K> {
+	disabled?: boolean
 }
 
 const Select = <K extends Key>({ dataKeys, onChange }: Props<K>) => {
