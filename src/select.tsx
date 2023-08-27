@@ -1,5 +1,5 @@
 import type { ChangeEventHandler } from 'react'
-import { Data } from './data'
+import * as Data from './data'
 
 interface Props<K extends Data.Key> extends Data.Props<K> {
 	disabled?: boolean
