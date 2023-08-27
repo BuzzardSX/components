@@ -7,13 +7,13 @@ interface Props<K extends Data.Key> extends Data.Props<K> {
 	name?: string
 }
 
-const Select = <K extends Data.Key>({ dataKeys, onChange, ...props }: Props<K>) => {
+const Select = <K extends Data.Key>({ itemKeys, onChange, ...props }: Props<K>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => onChange?.(event.target.value as K)
 
 	return (
 		<select onChange={changeHandler} {...props}>
-			{dataKeys.map((key) =>
+			{itemKeys.map((key) =>
 				<option key={key} children={key} />
 			)}
 		</select>
