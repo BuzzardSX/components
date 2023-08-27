@@ -9,7 +9,13 @@ type Item<K extends Key, V extends Value> = {
 	value: V
 }
 
-function render<K extends Key, V extends Value>(items: Item<K, V>[], current: K) {}
+interface Args<K extends Key, V extends Value> {
+	items?: Item<K, V>[]
+}
+
+function render<K extends Key, V extends Value>(args: Args<K, V>) {}
+
+render({ items: [{ key: 1, value: 1 }, { key: 2, value: 1 }] })
 
 interface Data<K extends Key> {
 	dataKeys: ToArray<K>
