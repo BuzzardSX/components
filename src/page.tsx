@@ -9,7 +9,7 @@ const brands = ['LG', 'Samsung', 'Philips']
 const Page = () => {
 	return (
 		<div>
-			<Select optionValues={brands} onChange={(key) => console.log(key)} />
+			<Select dataKeys={brands} onChange={(key) => console.log(key)} />
 		</div>
 	)
 }
