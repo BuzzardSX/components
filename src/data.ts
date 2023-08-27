@@ -13,7 +13,7 @@ interface Args<K extends Key> {
 const render = <K extends Key>(args: Args<K>) => {}
 
 render({
-	items: [{ key: 1 }]
+	items: [{ key: 1 }, { key: 2 }]
 })
 
 export interface Props<K extends Key> {
