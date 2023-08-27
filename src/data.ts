@@ -4,18 +4,16 @@ export type ChangeEventHandler<K> = (key: K) => void
 
 type ItemKey = number
 
-type NonLiteralNumber<T> = T extends number ? number extends T ? T : never : never
+type BeforeItem<K> = { key: K }
 
-type Literal = 1
-
-type Result = NonLiteralNumber<number>
+type DataItem<K> = K extends number ? number extends K ? BeforeItem<K> : never : never
 
 type Item<K extends ItemKey> = {
 	key: K
 }
 
 interface Args<K extends ItemKey> {
-	items: Item<K>[]
+	items: DataItem<K>[]
 }
 
 const render = <K extends ItemKey>(args: Args<K>) => {}
