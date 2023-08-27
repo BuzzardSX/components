@@ -1,16 +1,12 @@
 export type Key = string | number
 
-export type ChangeEventHandler<K> = (key: K) => void
+export type ChangeEventHandler<K extends Key> = (key: K) => void
 
 type ItemKey = number
 
 type BeforeItem<K> = { key: K }
 
 type DataItem<K> = K extends number ? number extends K ? BeforeItem<K> : never : never
-
-type Item<K extends ItemKey> = {
-	key: K
-}
 
 interface Args<K extends ItemKey> {
 	items: DataItem<K>[]
