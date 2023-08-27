@@ -20,5 +20,5 @@ render({
 
 export interface Props<K extends Key> {
 	dataKeys: ToArray<K>
-	onChange?: (key: K) => void
+	onChange?: ChangeEventHandler<K>
 }
