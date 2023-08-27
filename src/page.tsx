@@ -9,8 +9,6 @@ interface SelectProps<V extends Value> {
 	onChange?: (value: V) => void
 }
 
-type Select = <V extends Value>(props: SelectProps<V>) => JSX.Element
-
 const Select = <V extends Value>({ optionValues, onChange }: SelectProps<V>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => onChange?.(event.target.value as V)
@@ -32,7 +30,7 @@ const brands = ['LG', 'Samsung', 'Philips']
 
 const Page = () =>
 	<div>
-		<Select optionValues={nums} onChange={(value) => console.log(value)} />
+		<Select optionValues={brands} onChange={(value) => console.log(value)} />
 	</div>
 
 export default Page
