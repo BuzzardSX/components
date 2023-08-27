@@ -9,14 +9,15 @@ interface Data<K extends Key> {
 
 interface Props<K extends Key> extends Data<K> {
 	disabled?: boolean
+	multiple?: boolean
 }
 
-const Select = <K extends Key>({ dataKeys, onChange }: Props<K>) => {
+const Select = <K extends Key>({ dataKeys, onChange, ...props }: Props<K>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => onChange?.(event.target.value as K)
 
 	return (
-		<select onChange={changeHandler}>
+		<select onChange={changeHandler} {...props}>
 			{dataKeys.map((key) =>
 				<option key={key} children={key} />
 			)}
