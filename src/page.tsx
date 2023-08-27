@@ -1,3 +1,5 @@
+import type { ChangeEventHandler } from 'react'
+
 type Key = string | number
 
 type Value = Key
@@ -8,10 +10,13 @@ interface SelectProps<K extends Key> {
 }
 
 const Select = <T extends Key>({ options, onChange }: SelectProps<T>) => {
+	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
+		(event) => onChange?.(event.target.value as T)
+
 	return (
-		<select onChange={(event) => onChange?.(event.target.value as T)}>
-			{options.map(
-				(option) => <option value={option}>{option}</option>
+		<select onChange={changeHandler}>
+			{options.map((option) =>
+				<option value={option}>{option}</option>
 			)}
 		</select>
 	)
