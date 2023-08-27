@@ -2,15 +2,17 @@ export type Key = string | number
 
 export type ChangeEventHandler<K> = (key: K) => void
 
-type Item<K extends Key> = {
+type ItemKey = number
+
+type Item<K extends ItemKey> = {
 	key: K
 }
 
-interface Args<K extends Key> {
+interface Args<K extends ItemKey> {
 	items: Item<K>[]
 }
 
-const render = <K extends Key>(args: Args<K>) => {}
+const render = <K extends ItemKey>(args: Args<K>) => {}
 
 render({
 	items: [{ key: 1 }, { key: 2 }]
