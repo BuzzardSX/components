@@ -2,6 +2,15 @@ import type { ChangeEventHandler } from 'react'
 
 type Key = string | number
 
+type Value = string | number
+
+type Item<K extends Key, V extends Value> = {
+	key: K
+	value: V
+}
+
+function render<K extends Key, V extends Value>(items: Item<K, V>[], current: K) {}
+
 interface Data<K extends Key> {
 	dataKeys: ToArray<K>
 	onChange?: (key: K) => void
