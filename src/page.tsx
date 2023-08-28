@@ -1,15 +1,24 @@
 import Select from './select'
 
-const chars = ['a', 'b', 'c']
-
-const nums = [1, 2, 3]
-
-const brands = ['LG', 'Samsung', 'Philips']
+const brands = [
+	{
+		key: 1,
+		value: 'LG'
+	},
+	{
+		key: 2,
+		value: 'Samsung'
+	},
+	{
+		key: 3,
+		value: 'Philips'
+	}
+]
 
 const Page = () => {
 	return (
 		<div>
-			<Select itemKeys={brands} onChange={(key) => console.log(key)} />
+			<Select items={brands} onChange={(key) => console.log(key)} />
 		</div>
 	)
 }
