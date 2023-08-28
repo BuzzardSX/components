@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 type Key = string | number
 
 type Value = string | number
@@ -12,6 +14,7 @@ type Item<K, V> = {
 interface Props<K extends Key, V extends Value> {
 	items: K extends unknown ? V extends unknown ? Item<K, V>[] : never : never
 	onChange?: ChangeEventHandler<K>
+	renderItem?: (value: V) => ReactNode
 }
 
 export type {
