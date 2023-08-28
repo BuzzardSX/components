@@ -13,8 +13,8 @@ const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ...
 
 	return (
 		<select onChange={changeHandler} {...props}>
-			{items.map(({ key }) =>
-				<option key={key} children={key} />
+			{items.map(({ key, value }) =>
+				<option key={key} value={key} children={value} />
 			)}
 		</select>
 	)
