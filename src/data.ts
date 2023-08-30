@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-type Key = string | number
+type Key = string | ReadonlyArray<string> | number
 
 type Value = string | number
 
