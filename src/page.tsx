@@ -18,7 +18,7 @@ const brands = [
 const Page = () => {
 	return (
 		<div>
-			<Select items={brands} onChange={(key) => console.log(key.toFixed())} />
+			<Select items={brands} onChange={(key) => console.log(key)} />
 		</div>
 	)
 }
