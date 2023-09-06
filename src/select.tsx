@@ -14,7 +14,7 @@ const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ren
 	return (
 		<select onChange={changeHandler} {...props}>
 			{items.map(({ key, value }) =>
-				<option key={key.toString()} value={key}>
+				<option key={key} value={key}>
 					{renderItem?.(value as V) ?? value}
 				</option>
 			)}

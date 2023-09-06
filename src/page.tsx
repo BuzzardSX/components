@@ -15,21 +15,6 @@ const brands = [
 	}
 ]
 
-const brandsWithTupleKeys = [
-	{
-		key: ['1', '1'],
-		value: 'LG'
-	},
-	{
-		key: ['2', '2'],
-		value: 'Samsung'
-	},
-	{
-		key: ['3', '3'],
-		value: 'Philips'
-	}
-]
-
 const Page = () => {
 	return (
 		<div>
