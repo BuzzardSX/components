@@ -11,7 +11,7 @@ const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ren
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
 		(event) => {
 			const currentItem = items.find(
-				item => item.key as unknown == event.target.value
+				({ key }) => key as unknown == event.target.value
 			)
 
 			onChange?.(currentItem?.key as K)
