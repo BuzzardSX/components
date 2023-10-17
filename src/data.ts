@@ -13,14 +13,13 @@ type Item<K, V> = {
 
 type Items<K, V> = K extends unknown ? V extends unknown ? Item<K, V>[] : never : never
 
-interface Props<K extends Key, V extends Value> {
+export interface Props<K extends Key, V extends Value> {
 	items: Items<K, V>
 	onChange?: ChangeEventHandler<K>
 	renderItem?: (value: V) => ReactNode
 }
 
 export type {
-	Props,
 	ChangeEventHandler,
 	Key,
 	Value
