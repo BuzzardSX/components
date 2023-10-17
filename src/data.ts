@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
 
-type Key = string | number
+export type Key = string | number
 
-type Value = string | number
+export type Value = string | number
 
-type ChangeEventHandler<K extends Key> = (key: K) => void
+export type ChangeEventHandler<K extends Key> = (key: K) => void
 
 type Item<K, V> = {
 	key: K
@@ -17,10 +17,4 @@ export interface Props<K extends Key, V extends Value> {
 	items: Items<K, V>
 	onChange?: ChangeEventHandler<K>
 	renderItem?: (value: V) => ReactNode
-}
-
-export type {
-	ChangeEventHandler,
-	Key,
-	Value
 }
