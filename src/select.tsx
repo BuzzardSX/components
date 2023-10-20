@@ -9,12 +9,12 @@ interface Props<K extends Data.Key, V extends Data.Value> extends Data.Props<K, 
 
 const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, renderItem, ...props }: Props<K, V>) => {
 	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
-		(event) => {
-			const currentItem = items.find(
-				({ key }) => key as unknown == event.target.value
-			)
+		({ target }) => {
+			const { key } = items.find(
+				({ key }) => key as unknown == target.value
+			)!
 
-			onChange?.(currentItem?.key as K)
+			onChange?.(key as K)
 		}
 
 	return (
