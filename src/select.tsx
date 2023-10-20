@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import type { ChangeEventHandler } from 'react'
 import type * as Data from './data'
 
@@ -8,14 +9,14 @@ interface Props<K extends Data.Key, V extends Data.Value> extends Data.Props<K, 
 }
 
 const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, renderItem, ...props }: Props<K, V>) => {
-	const changeHandler: ChangeEventHandler<HTMLSelectElement> =
-		({ target }) => {
-			const { key } = items.find(
+	const changeHandler = useCallback<ChangeEventHandler<HTMLSelectElement>>(
+		({ target }) => onChange?.(
+			items.find(
 				({ key }) => key as unknown == target.value
-			)!
-
-			onChange?.(key as K)
-		}
+			)!.key as K
+		),
+		[onChange, items]
+	)
 
 	return (
 		<select onChange={changeHandler} {...props}>
