@@ -8,7 +8,7 @@ interface Props<K extends Data.Key, V extends Data.Value> extends Data.Props<K, 
 	name?: string
 }
 
-const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, renderItem, ...props }: Props<K, V>) => {
+const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ...props }: Props<K, V>) => {
 	const changeHandler = useCallback<ChangeEventHandler<HTMLSelectElement>>(
 		({ target }) => onChange?.(
 			items.find(
@@ -22,7 +22,7 @@ const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ren
 		<select onChange={changeHandler} {...props}>
 			{items.map(({ key, value }) =>
 				<option key={key} value={key}>
-					{renderItem?.(value as V) ?? value}
+					{value}
 				</option>
 			)}
 		</select>
