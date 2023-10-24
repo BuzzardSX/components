@@ -9,9 +9,4 @@ interface Props<K extends Key, V extends Value> {
 	onChange?: ChangeEventHandler<K>
 }
 
-export {
-	Key,
-	Value,
-	ChangeEventHandler,
-	Props
-}
+export { Key, Value, ChangeEventHandler, Props }
