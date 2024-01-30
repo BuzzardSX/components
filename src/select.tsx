@@ -10,11 +10,13 @@ interface Props<K extends Data.Key, V extends Data.Value> extends Data.Props<K, 
 
 const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ...props }: Props<K, V>) => {
 	const changeHandler = useCallback<ChangeEventHandler<HTMLSelectElement>>(
-		({ target }) => onChange?.(
-			items.find(
-				({ key }) => key as unknown == target.value
-			)!.key as K
-		),
+		({ target }) => {
+			onChange?.(
+				items.find(
+					({ key }) => key as unknown == target.value
+				)!.key as K
+			)
+		},
 		[onChange, items]
 	)
 
