@@ -1,7 +1,4 @@
-interface Table<R> {
-	definition: { recordIndex: keyof R }
-	records: Array<R>
-}
+import type { Table } from './table'
 
 interface Props<R> extends Table<R> {}
 
