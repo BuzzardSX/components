@@ -43,6 +43,10 @@ const Page = () => {
 						name1: {
 							recordIndex: 'name',
 							title: 'Name1'
+						},
+						age: {
+							recordIndex: 'age',
+							title: 'Age'
 						}
 					}}
 					records={transformedUsers} />
