@@ -6,6 +6,12 @@ function Component<R extends Record>({ definition, records }: Props<R>) {
 	return (
 		<table>
 			<thead>
+				<tr>
+					{Object.values(definition)
+						.map(
+							({ title }) => <th>{title}</th>
+						)}
+				</tr>
 			</thead>
 			<tbody>
 				{records.map(
