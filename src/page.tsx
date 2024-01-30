@@ -1,6 +1,14 @@
 import Select from './select'
 import { Grid } from './data'
 
+type UserRole = 'user' | 'admin'
+
+interface User {
+	name: string
+	age: number
+	role: UserRole
+}
+
 const items = [
 	{
 		key: 1,
@@ -12,18 +20,21 @@ const items = [
 	}
 ]
 
-const users = [
+const users: User[] = [
 	{
 		name: 'Mike',
-		age: 23
+		age: 23,
+		role: 'user'
 	},
 	{
 		name: 'Tom',
-		age: 12
+		age: 12,
+		role: 'user'
 	},
 	{
 		name: 'Billy',
-		age: 47
+		age: 47,
+		role: 'admin'
 	}
 ]
 
