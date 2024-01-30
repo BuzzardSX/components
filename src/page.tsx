@@ -14,12 +14,21 @@ const items = [
 
 const users = [
 	{
-		name: 'Mike'
+		name: 'Mike',
+		age: 23
 	},
 	{
-		name: 'Tom'
+		name: 'Tom',
+		age: 12
 	}
 ]
+
+const transformedUsers = users.map(
+	({ age, ...user }) => ({
+		age: age.toString(),
+		...user
+	})
+)
 
 const Page = () => {
 	return (
@@ -36,7 +45,7 @@ const Page = () => {
 							title: 'Name1'
 						}
 					}}
-					records={users} />
+					records={transformedUsers} />
 			</div>
 			<div>
 				<Select
