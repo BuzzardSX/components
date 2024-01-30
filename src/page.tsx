@@ -1,15 +1,6 @@
 import Select from './select'
 import { Grid } from './data'
 
-const users = [
-	{
-		name: 'Mike'
-	},
-	{
-		name: 'Tom'
-	}
-]
-
 const items = [
 	{
 		key: 1,
@@ -18,6 +9,15 @@ const items = [
 	{
 		key: 2,
 		value: 'Two'
+	}
+]
+
+const users = [
+	{
+		name: 'Mike'
+	},
+	{
+		name: 'Tom'
 	}
 ]
 
