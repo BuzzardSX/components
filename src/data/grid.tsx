@@ -1,5 +1,5 @@
 interface Table<R> {
-	definition?: { recordIndex: keyof R }
+	definition: { recordIndex: keyof R }
 	records: Array<R>
 }
 
