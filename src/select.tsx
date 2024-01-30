@@ -1,14 +1,14 @@
 import { useCallback } from 'react'
 import type { ChangeEventHandler } from 'react'
-import type * as Data from './data'
+import type * as List from './list'
 
-interface Props<K extends Data.Key, V extends Data.Value> extends Data.Props<K, V> {
+interface Props<K extends List.Key, V extends List.Value> extends List.Props<K, V> {
 	disabled?: boolean
 	multiple?: boolean
 	name?: string
 }
 
-const Select = <K extends Data.Key, V extends Data.Value>({ items, onChange, ...props }: Props<K, V>) => {
+const Select = <K extends List.Key, V extends List.Value>({ items, onChange, ...props }: Props<K, V>) => {
 	const changeHandler = useCallback<ChangeEventHandler<HTMLSelectElement>>(
 		({ target }) => {
 			onChange?.(
