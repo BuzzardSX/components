@@ -2,7 +2,7 @@ import type Table from './table'
 
 interface Props<R> extends Table<R> {}
 
-function Component<R>({ records }: Props<R>) {
+function Component<R>({ definition, records }: Props<R>) {
 	return (
 		<table>
 			<thead>
@@ -11,7 +11,10 @@ function Component<R>({ records }: Props<R>) {
 				{records.map(
 					(record) =>
 						<tr>
-							<td>Content</td>
+							{Object.values(definition)
+								.map(
+									(value) => <td>Content</td>
+								)}
 						</tr>
 				)}
 			</tbody>
