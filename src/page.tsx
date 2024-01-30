@@ -10,6 +10,17 @@ const users = [
 	}
 ]
 
+const items = [
+	{
+		key: 1,
+		value: 'One'
+	},
+	{
+		key: 2,
+		value: 'Two'
+	}
+]
+
 const Page = () => {
 	return (
 		<div>
@@ -24,7 +35,7 @@ const Page = () => {
 			</div>
 			<div>
 				<Select
-					items={[{ key: 1, value: 'One' }, { key: 2, value: 'Two' }]}
+					items={items}
 					onChange={(key) => console.log(key)} />
 			</div>
 		</div>
