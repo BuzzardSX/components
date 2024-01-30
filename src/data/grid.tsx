@@ -1,4 +1,4 @@
-import type { Table } from './table'
+import type Table from './table'
 
 interface Props<R> extends Table<R> {}
 

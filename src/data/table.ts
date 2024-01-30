@@ -7,6 +7,4 @@ interface Table<R> {
 	records: Array<R>
 }
 
-export type {
-	Table
-}
+export default Table
