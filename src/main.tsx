@@ -1,4 +1,6 @@
 import App from './app'
 import { createRoot } from 'react-dom/client'
 
-createRoot(window.app).render(<App />)
+const app = document.getElementById('app')!;
+
+createRoot(app).render(<App />)
