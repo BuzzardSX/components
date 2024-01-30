@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import type { ChangeEventHandler } from 'react'
-import type * as List from './data/list'
+import type * as List from './list'
 
 interface Props<K extends List.Key, V extends List.Value> extends List.Props<K, V> {
 	disabled?: boolean
