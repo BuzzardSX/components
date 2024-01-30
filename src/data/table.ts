@@ -1,5 +1,6 @@
 type DefinitionValue<R> = {
 	recordIndex: keyof R
+	title: string
 }
 
 type Record = {

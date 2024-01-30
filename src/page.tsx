@@ -28,7 +28,12 @@ const Page = () => {
 				<Grid
 					definition={{
 						name: {
-							recordIndex: 'name'
+							recordIndex: 'name',
+							title: 'Name'
+						},
+						name1: {
+							recordIndex: 'name',
+							title: 'Name1'
 						}
 					}}
 					records={users} />
