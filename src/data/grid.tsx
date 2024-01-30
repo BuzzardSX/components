@@ -4,6 +4,7 @@ interface Props<R> {
 }
 
 function Component<R>(props: Props<R>) {
+	return <table />
 }
 
 export default Component
