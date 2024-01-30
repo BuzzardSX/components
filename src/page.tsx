@@ -52,16 +52,10 @@ const Page = () => {
 				<Grid
 					definition={{
 						name: {
-							recordIndex: 'name',
-							title: 'Name'
-						},
-						nameS: {
-							recordIndex: 'name',
-							title: 'NameS'
+							recordIndex: 'name'
 						},
 						age: {
-							recordIndex: 'age',
-							title: 'Age'
+							recordIndex: 'age'
 						},
 						role: {
 							recordIndex: 'role'
