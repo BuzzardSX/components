@@ -64,8 +64,7 @@ const Page = () => {
 							title: 'Age'
 						},
 						role: {
-							recordIndex: 'role',
-							title: 'Role'
+							recordIndex: 'role'
 						}
 					}}
 					records={transformedUsers} />

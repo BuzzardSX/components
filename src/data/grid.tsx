@@ -7,9 +7,9 @@ function Component<R extends Record>({ definition, records }: Props<R>) {
 		<table>
 			<thead>
 				<tr>
-					{Object.values(definition)
+					{Object.entries(definition)
 						.map(
-							({ title }) => <th>{title}</th>
+							([key, { title }]) => <th>{title ?? key}</th>
 						)}
 				</tr>
 			</thead>
