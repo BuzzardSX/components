@@ -12,7 +12,6 @@
 		"allowJs": true,
 		"declaration": true,
 		"declarationMap": true,
-		"verbatimModuleSyntax": true,
 		"noImplicitAny": true
 	},
 	"include": ["src"]
