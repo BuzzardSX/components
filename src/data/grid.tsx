@@ -1,8 +1,8 @@
 import type Table from './table'
 
-interface Props<R> extends Table<R> {}
+interface Props<R extends Record<string, string>> extends Table<R> {}
 
-function Component<R>({ definition, records }: Props<R>) {
+function Component<R extends Record<string, string>>({ definition, records }: Props<R>) {
 	return (
 		<table>
 			<thead>
@@ -13,7 +13,7 @@ function Component<R>({ definition, records }: Props<R>) {
 						<tr>
 							{Object.values(definition)
 								.map(
-									(value) => <td>Content</td>
+									({ recordIndex }) => <td>{record[recordIndex]}</td>
 								)}
 						</tr>
 				)}
