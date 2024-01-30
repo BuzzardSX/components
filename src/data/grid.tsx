@@ -1,8 +1,8 @@
-import type Table from './table'
+import type { Table, Record } from './table'
 
-interface Props<R extends Record<string, string>> extends Table<R> {}
+interface Props<R extends Record> extends Table<R> {}
 
-function Component<R extends Record<string, string>>({ definition, records }: Props<R>) {
+function Component<R extends Record>({ definition, records }: Props<R>) {
 	return (
 		<table>
 			<thead>

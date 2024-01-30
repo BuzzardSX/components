@@ -2,9 +2,20 @@ type DefinitionValue<R> = {
 	recordIndex: keyof R
 }
 
-interface Table<R extends Record<string, string>> {
-	definition: Record<string, DefinitionValue<R>>
+type Record = {
+	[key: string]: string
+}
+
+type Definition<R> = {
+	[key: string]: DefinitionValue<R>
+}
+
+interface Table<R extends Record> {
+	definition: Definition<R>
 	records: Array<R>
 }
 
-export default Table
+export type {
+	Table,
+	Record
+}
