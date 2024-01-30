@@ -1,5 +1,9 @@
+type Definition<R> = {
+	recordIndex: keyof R
+}
+
 interface Table<R> {
-	definition: { recordIndex: keyof R }
+	definition: Definition<R>
 	records: Array<R>
 }
 
