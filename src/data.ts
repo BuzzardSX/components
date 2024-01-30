@@ -11,8 +11,4 @@ interface Props<K extends Key, V extends Value> {
 	onChange?: ChangeEventHandler<K>
 }
 
-type StringToNull<T> = T extends string ? null : T
-
-type Result = StringToNull<string | number>
-
 export { Key, Value, ChangeEventHandler, Props }
