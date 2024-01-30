@@ -4,7 +4,14 @@ interface Props<R> {
 }
 
 function Component<R>(props: Props<R>) {
-	return <table />
+	return (
+		<table>
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	)
 }
 
 export default Component
