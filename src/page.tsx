@@ -20,6 +20,10 @@ const users = [
 	{
 		name: 'Tom',
 		age: 12
+	},
+	{
+		name: 'Billy',
+		age: 47
 	}
 ]
 
