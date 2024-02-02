@@ -13,7 +13,7 @@ type Definition<R> = {
 
 interface Table<R extends Record> {
 	definition: Definition<R>
-	records: Array<R>
+	records: R[]
 }
 
 export type {
