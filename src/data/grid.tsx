@@ -2,7 +2,7 @@ import type { Table, Record } from './table'
 
 interface Props<R extends Record> extends Table<R> {}
 
-function Component<R extends Record>({ definition, records }: Props<R>) {
+const Component = <R extends Record>({ definition, records }: Props<R>) => {
 	return (
 		<table>
 			<thead>
