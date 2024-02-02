@@ -7,11 +7,13 @@ type Definition<R> = {
 	[key: string]: DefinitionValue<R>
 }
 
-export type Record = {
+type Record = {
 	[key: string]: string
 }
 
-export interface Table<R extends Record> {
+interface Table<R extends Record> {
 	definition: Definition<R>
 	records: R[]
 }
+
+export type { Table, Record }
