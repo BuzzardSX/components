@@ -11,12 +11,9 @@ type Record = {
 	[key: string]: string
 }
 
-interface Table<R extends Record> {
+interface Props<R extends Record> {
 	definition: Definition<R>
 	records: R[]
-}
-
-interface Props<R extends Record> extends Table<R> {
 	groupKey?: keyof R
 }
 
