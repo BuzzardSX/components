@@ -1,4 +1,20 @@
-import type { Table, Record } from './table'
+type DefinitionValue<R> = {
+	recordIndex: keyof R
+	title?: string
+}
+
+type Definition<R> = {
+	[key: string]: DefinitionValue<R>
+}
+
+type Record = {
+	[key: string]: string
+}
+
+interface Table<R extends Record> {
+	definition: Definition<R>
+	records: R[]
+}
 
 interface Props<R extends Record> extends Table<R> {
 	groupKey?: keyof R
