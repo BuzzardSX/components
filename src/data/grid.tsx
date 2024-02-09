@@ -1,6 +1,8 @@
 import type { Table, Record } from './table'
 
-interface Props<R extends Record> extends Table<R> {}
+interface Props<R extends Record> extends Table<R> {
+	groupKey?: keyof R
+}
 
 const Component = <R extends Record>({ definition, records }: Props<R>) =>
 	<table>
