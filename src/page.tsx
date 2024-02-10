@@ -1,4 +1,3 @@
-import Select from './select'
 import { Grid } from './data'
 
 type UserRole = 'user' | 'admin'
@@ -8,17 +7,6 @@ interface User {
 	age: number
 	role: UserRole
 }
-
-const items = [
-	{
-		key: 1,
-		value: 'One'
-	},
-	{
-		key: 2,
-		value: 'Two'
-	}
-]
 
 const users: User[] = [
 	{
@@ -62,11 +50,6 @@ const Page = () => {
 						}
 					}}
 					records={transformedUsers} />
-			</div>
-			<div>
-				<Select
-					items={items}
-					onChange={(key) => console.log(key)} />
 			</div>
 		</div>
 	)
